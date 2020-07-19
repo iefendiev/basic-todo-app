@@ -12,11 +12,18 @@ $("#plus").on("click",function(){
 })
 
 function printDown(){
+    console.log($("ul li").length)
+    if($("ul li").length<6){
 
-    var tekst = $(".input").val()
-    $(".input").val(" ")
-    $("ul").append("<li>"+"<span class='hide'>" + trashIcon +"</span>"  + tekst + "</li>");
+        var tekst = $(".input").val()
+        $(".input").val(" ")
+        $("ul").append("<li>"+"<span class='hide'>" + trashIcon +"</span>"  + tekst + "</li>");
+    
+    }
 
+    else {
+        alert("You cannot enter more than 6 todos. Make some progress first!")
+    }
 }
 
 $("ul").on("click", "li", function(){
